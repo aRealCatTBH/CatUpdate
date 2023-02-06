@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/aRealCatTBH/CatUpdate/issues"
   },
-  "homepage": "https://github.com/aRealCatTBH/CatUpdate#readme"
+  "homepage": "https://github.com/aRealCatTBH/CatUpdate#readme",
+  "type": "module"
 }
