@@ -35,7 +35,9 @@ const app = fastify(fastifyOptions);
 global.app = app;
 
 global.startTime = Date.now();
-global.version = require("../package.json").version;
+
+import pkg from '../package.json' assert { type: "json" };
+global.version = pkg.version;
 
 const port = process.argv[2] || 80;
 if (!process.argv[2]) console.log(`No port specified in args, using default: ${port}\n`);
