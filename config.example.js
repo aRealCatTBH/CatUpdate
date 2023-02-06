@@ -36,8 +36,8 @@ export default {
     /* Discord webhook for statistics updates (Uncomment and modify if you want a webhook)
     webhook: {
       url: "https://discord.com/api/webhooks/X", // Discord webhook URL
-      username: "GooseUpdate", // Webhook username
-      avatarUrl: "https://cdn.discordapp.com/avatars/760559484342501406/5125aff2f446ad7c45cf2dfd6abf92ed.png" // URL to webhook avatar
+      username: "CatUpdate", // Webhook username
+      avatarUrl: "https://catets.pages.dev/pfp.webp" // URL to webhook avatar
     },
     */
   
