@@ -4,6 +4,9 @@ import { join } from 'path';
 // Hell.
 const indexTemplate = readFileSync(join(global.srcDir, 'apiV1', 'dashboard', 'template.html'), 'utf8');
 
+const style = readFileSync(join(global.srcDir, 'apiV1', 'dashboard', 'style.css'), 'utf8');
+const script = readFileSync(join(global.srcDir, 'apiV1', 'dashboard', 'script.js'), 'utf8');
+
 const generatePie = (arr) => {
   const colors = ['#D9434B', '#D9D659', '#2E9BD9', '#8C1D23', '#24678C'];
   const unique = arr.filter((v, i, s) => s.indexOf(v) === i).sort((a, b) => a.localeCompare(b));
@@ -68,6 +71,9 @@ global.app.get('/', (req, res) => {
   
   temp = temp.replace(`TEMPLATE_UPTIME`, getDiffTime(startTime));
   temp = temp.replace(`TEMPLATE_LAST_UPDATE`, getDiffTime(Math.max(...usersValues.map((x => x.time)))));
+
+  temp = temp.replace(`STYLE`, style);
+  temp = temp.replace(`SCRIPT`, script);
   
   for (let k in requestCounts) {
     temp = temp.replace(`TEMPLATE_COUNT_${k.toUpperCase()}`, requestCounts[k]);
